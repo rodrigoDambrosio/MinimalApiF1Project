@@ -72,6 +72,7 @@
     <RefactorLog Include="F1_DB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Script.PostDeployment.sql" />
+    <PostDeploy Include="Script.PostDeployment.sql" />
+    <None Include="F1_DB.publish.xml" />
   </ItemGroup>
 </Project>

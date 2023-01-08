@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalApiProject", "Minima
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "F1_DB", "F1_DB\F1_DB.sqlproj", "{867C683A-ED32-498D-B867-09A59B88E744}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{32C7196C-70C9-4087-9997-7EFB36D5E341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{32C7196C-70C9-4087-9997-7EFB36D5E341}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABFF04D9-C5DC-4969-9FBF-B38DA665D22C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
