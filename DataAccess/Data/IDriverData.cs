@@ -9,5 +9,6 @@ namespace DataAccess.Data
         Task<IEnumerable<DriverModel>> GetDrivers();
         Task InsertDriver(DriverModel driver);
         Task UpdateDriver(DriverModel driver);
+        Task<string?> GetDriverImagePath(int id);
     }
 }

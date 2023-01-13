@@ -1,4 +1,6 @@
-﻿namespace MinimalApiProject;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace MinimalApiProject;
 
 public static class Api
 {
@@ -7,9 +9,28 @@ public static class Api
         // API endpoint mapping
         app.MapGet("/Drivers", GetDrivers);
         app.MapGet("/Drivers/{id}", GetDriver);
+        app.MapGet("/DriversImage/{id}", GetDriverImage);
         app.MapPost("/Drivers", InsertDriver);
         app.MapPut("/Drivers", UpdateDriver);
         app.MapDelete("/Drivers", DeleteDriver);
+    }
+    private static async Task<IResult> GetDriverImage(int id, IDriverData data)
+    {
+        // This just returns the jpg
+
+        //var mimeType = "image/jpg";
+        //var path = @"Alonso.jpg";
+        //return Results.File(path, contentType: mimeType);
+
+        // This returns a string with the path to the jpg
+        try
+        {
+            return Results.Ok(await data.GetDriverImagePath(id));
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
     }
 
     private static async Task<IResult> GetDrivers(IDriverData data)
