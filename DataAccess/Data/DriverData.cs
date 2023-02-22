@@ -28,11 +28,20 @@ public class DriverData : IDriverData
     }
 
     public async Task InsertDriver(DriverModel driver) =>
-        await _db.SaveData(storeProcedure: "dbo.sp_InsertDriver", new { driver.FirstName, driver.LastName, driver.Number });
+        await _db.SaveData(storeProcedure: "dbo.sp_InsertDriver", new { driver.FirstName, driver.LastName, driver.Number, driver.PhotoPath });
 
     public async Task UpdateDriver(DriverModel driver) =>
         await _db.SaveData(storeProcedure: "dbo.sp_UpdateDriver", driver);
 
     public async Task DeleteDriver(int id) =>
         await _db.SaveData(storeProcedure: "dbo.sp_DeleteDriver", new { Id = id });
+
+    public async Task<string?> GetDriverImagePath(int id)
+    {
+        var results = await _db.LoadData<string, dynamic>(
+            storeProcedure: "dbo.sp_GetDriverPhotoPath",
+            new { Id = id });
+        return results.FirstOrDefault(); // first record or default value for driver model (null)
+    }
+
 }

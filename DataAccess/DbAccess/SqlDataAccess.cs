@@ -14,23 +14,23 @@ public class SqlDataAccess : ISqlDataAccess
         _configuration = configuration;
     }
 
-    // Default is the one from appseting.json
+    // Default is the one from appsettings.json
     // Runs a store procedure which has some parameters and returns that rows in an IEnumerable
     public async Task<IEnumerable<T>> LoadData<T, U>(string storeProcedure,
-                                                    U paramaters,
+                                                    U parameters,
                                                     string connectionId = "Default")
     {
         using IDbConnection connection = new SqlConnection(_configuration.GetConnectionString(connectionId));
-        return await connection.QueryAsync<T>(storeProcedure, paramaters,
+        return await connection.QueryAsync<T>(storeProcedure, parameters,
             commandType: CommandType.StoredProcedure);
     }
 
     public async Task SaveData<T>(string storeProcedure,
-                                                    T paramaters,
+                                                    T parameters,
                                                     string connectionId = "Default")
     {
         using IDbConnection connection = new SqlConnection(_configuration.GetConnectionString(connectionId));
-        await connection.ExecuteAsync(storeProcedure, paramaters, commandType: CommandType.StoredProcedure);
+        await connection.ExecuteAsync(storeProcedure, parameters, commandType: CommandType.StoredProcedure);
     }
 }
 

@@ -2,9 +2,10 @@
 	@Id int,
 	@FirstName nvarchar(50),
 	@LastName nvarchar(50),
-	@Number smallint
+	@Number tinyint,
+    @PhotoPath nvarchar(260)
 AS
 	UPDATE Driver
-	set FirstName=@FirstName, LastName=@LastName, Number=@Number
+	set FirstName=@FirstName, LastName=@LastName, Number=@Number, PhotoPath=@PhotoPath
 	Where Id=@Id
 

@@ -67,6 +67,7 @@
     <Build Include="dbo\StoreProcedures\sp_DeleteDriverById.sql" />
     <Build Include="dbo\StoreProcedures\sp_InsertDriver.sql" />
     <Build Include="dbo\StoreProcedures\sp_UpdateDriver.sql" />
+    <Build Include="dbo\StoreProcedures\sp_GetDriverPhotoPath.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="F1_DB.refactorlog" />
